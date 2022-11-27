@@ -1,0 +1,14 @@
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.exe
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.deps.json
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.runtimeconfig.json
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.runtimeconfig.dev.json
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.dll
+C:\Users\den4i\source\repos\SaberList\bin\Debug\netcoreapp3.1\SaberList.pdb
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.csproj.AssemblyReference.cache
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.AssemblyInfoInputs.cache
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.AssemblyInfo.cs
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.csproj.CoreCompileInputs.cache
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.dll
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.pdb
+C:\Users\den4i\source\repos\SaberList\obj\Debug\netcoreapp3.1\SaberList.genruntimeconfig.cache
