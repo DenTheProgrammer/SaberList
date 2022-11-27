@@ -51,22 +51,22 @@ namespace SaberList
 
             using (StreamWriter sw = new StreamWriter(s))
             {
-                sw.WriteLine(Count);
-
-                ListNode curNode = Head;
                 Dictionary<ListNode, int> nodeIndDict = new Dictionary<ListNode, int>();
-                for (int i = 0; i < Count; i++)//nodes indexing
+                sw.WriteLine(Count);
+                //nodes indexing
+                ListNode curNode = Head;
+                for (int i = 0; i < Count; i++)
                 {
                     nodeIndDict.Add(curNode, i);
                     curNode = curNode.Next;
                 }
 
+                //serializing
                 curNode = Head;
-                for (int i = 0; i < Count; i++)//serializing
+                for (int i = 0; i < Count; i++)
                 {
                     string randIndex = curNode.Rand == null ? "null" : nodeIndDict[curNode.Rand].ToString();
                     string nodeFullInfo = $"{randIndex}\n{curNode.Data.Length}\n{curNode.Data}\n";
-
                     sw.Write(nodeFullInfo);
                     curNode = curNode.Next;
                 }
@@ -95,7 +95,7 @@ namespace SaberList
                     int randNodeIndex;
                     if (int.TryParse(sr.ReadLine(), out randNodeIndex))
                     {
-                        randIndexes.Add(randNodeIndex);   
+                        randIndexes.Add(randNodeIndex);
                     }
                     else
                     {
@@ -103,20 +103,7 @@ namespace SaberList
                     }
                     //parse data
                     int dataSize = int.Parse(sr.ReadLine());
-                    StringBuilder sb = new StringBuilder();
-                    while(sb.Length < dataSize)
-                    {
-                        string str = sr.ReadLine();
-                        if (str.Length + sb.Length == dataSize)
-                        {
-                            sb.Append(str);
-                        }
-                        else
-                        {
-                            sb.AppendLine(str);
-                        }
-                    }
-                    node.Data = sb.ToString();
+                    ParseNodeData(dataSize, sr, node);
                     //link prev-next
                     if (i == 0)//first
                     {
@@ -132,7 +119,6 @@ namespace SaberList
                         prev.Next = node;
                         node.Prev = prev;
                     }
-
                     prev = node;
                 }
                 //link rands
@@ -151,8 +137,25 @@ namespace SaberList
 
                     curNode = curNode.Next;
                 }
-
             };
+        }
+
+        private static void ParseNodeData(int dataSize, StreamReader sr, ListNode node)
+        {
+            StringBuilder sb = new StringBuilder();
+            while (sb.Length < dataSize)
+            {
+                string str = sr.ReadLine();
+                if (str.Length + sb.Length == dataSize)
+                {
+                    sb.Append(str);
+                }
+                else
+                {
+                    sb.AppendLine(str);
+                }
+            }
+            node.Data = sb.ToString();
         }
     }
 }

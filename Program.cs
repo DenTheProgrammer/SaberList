@@ -12,33 +12,13 @@ namespace SaberList
             FileStream fs = new FileStream(SAVE_PATH, FileMode.Create, FileAccess.ReadWrite);
             ListRand list = CreateList();
             list.Serialize(fs);
-
-
             fs.Close();
+
+
             fs = new FileStream(SAVE_PATH, FileMode.Open, FileAccess.Read);
-            ListRand deserealizedList = new ListRand();
-            deserealizedList.Deserialize(fs);
-            Console.WriteLine($"Ser = des? - {deserealizedList.Equals(list)}");
-
-
-            //test
-            /*List<string> tests = new List<string> { "34 435seff", "42 segfg5", "null" };
-
-            Console.WriteLine("parse int tests:");
-            foreach (string str in tests)
-            {
-                int res;
-                if (int.TryParse(str, out res))
-                {
-                    Console.WriteLine($"{str} - {res}");
-                }
-                else
-                {
-                    Console.WriteLine($"{str} - null");
-                }
-            }*/
-            //
-
+            ListRand deserializedList = new ListRand();
+            deserializedList.Deserialize(fs);
+            Console.WriteLine($"Created list == deserialized list? - {deserializedList.Equals(list)}");
             fs.Close();
         }
 
@@ -64,9 +44,10 @@ namespace SaberList
                     listRand.Tail = node;
                 }
 
-                node.Data = @$"data{i}
-                    more 
-                    data...";
+                node.Data = @$"data{i} | {rand.NextDouble()} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel lorem augue. 
+Praesent molestie venenatis augue, id feugiat felis. Maecenas lobortis tortor at turpis dapibus, at ullamcorper mauris rutrum. Nulla mollis volutpat semper. Sed tristique arcu nec nunc lacinia, quis congue urna sagittis. Nam mattis fringilla ipsum at rutrum. Nunc accumsan ligula turpis, faucibus vehicula erat accumsan id.
+
+Suspendisse eget urna malesuada justo convallis convallis. Quisque tincidunt ac purus vel feugiat. Curabitur dolor massa, sollicitudin in molestie sed, dapibus ut nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent sed ornare dui. Vestibulum in lectus ornare lorem accumsan tristique quis vel ligula. Sed at augue tortor. Praesent orci massa, dapibus a elementum nec, hendrerit ac enim. Sed sagittis scelerisque sollicitudin. Sed sed libero fermentum, condimentum dui et, ullamcorper purus.";
                 if (prev != null)//all nodes except first
                 {
                     node.Prev = prev;
